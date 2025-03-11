@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public bool isDead = false;
     public bool onGround = true;
 
+    [SerializeField] bool isMobileClient = false;
+
     //Physics
     Rigidbody rb;
 
@@ -29,9 +31,9 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 8;
     [SerializeField] float jumpPower = 200;
 
-    public void OnJump() //When the jump button is pressed.
+    public void OnJump() //When the jump button is pressed for mobile.
     {
-            if (onGround == true)
+            if (onGround == true && isMobileClient == true)
             {
                 print("You just jumped");
                 sound.clip = jump;
@@ -43,6 +45,21 @@ public class Player : MonoBehaviour
                 print("Cannot jump, you are in the air");
             }
         
+    }
+
+    public void keyboardJump() //When space is pressed for PC controls.
+    {
+        if (onGround == true)
+        {
+            print("You just jumped");
+            sound.clip = jump;
+            sound.Play();
+            rb.AddForce(new Vector3(0, jumpPower, 0));
+        }
+        else
+        {
+            print("Cannot jump, you are in the air");
+        }
     }
 
     public void OnExit() //When the exit button is pressed.
@@ -84,10 +101,42 @@ public class Player : MonoBehaviour
         }
         else //Otherwise, allow them to move.
         {
-            //Movement and Controls
-            //Movedirection uses X and Y like in a 2D game so it needs to be converted to 3D X and Z
-            Vector2 moveDirection = moveAction.action.ReadValue<Vector2>();
-            transform.Translate((new Vector3(moveDirection.x, 0, moveDirection.y)) * speed * Time.deltaTime);
+            
+            if (isMobileClient == true) //Use mobile controls
+            {
+                //Mobile Movement and Controls
+                //Movedirection uses X and Y like in a 2D game so it needs to be converted to 3D X and Z
+                Vector2 moveDirection = moveAction.action.ReadValue<Vector2>();
+                transform.Translate((new Vector3(moveDirection.x, 0, moveDirection.y)) * speed * Time.deltaTime);
+            }
+            else //Use keyboard controls
+            {     
+                //Keyboard Controls
+                Vector2 moveDirection;
+                if (Input.GetKey(KeyCode.W))
+                {
+                    transform.Translate((new Vector3(0, 0, 1)) * speed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    transform.Translate((new Vector3(-1, 0, 0)) * speed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    transform.Translate((new Vector3(0, 0, -1)) * speed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    transform.Translate((new Vector3(1, 0, 0)) * speed * Time.deltaTime);
+                }
+                if (Input.GetKeyDown(KeyCode.Space) && onGround == true)
+                {
+                    keyboardJump();
+                }
+
+
+                
+            }           
         }
 
         
