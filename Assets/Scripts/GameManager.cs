@@ -62,16 +62,16 @@ public class GameManager : MonoBehaviour
             if (scoreSave.coinScore > scoreSave.coinScore2)
             { //Player 1 wins by score
                 //scoreSave.playerColor = playerChar.GetComponent<Material>().color;
-                setWinnerSave(Color.red, "Player 1 Wins", scoreSave.coinScore);
+                setWinnerSave(Color.red, "Player 1 Wins");
             }
             if (scoreSave.coinScore < scoreSave.coinScore2)
             { //Player 2 wins by score
                 //scoreSave.playerColor = playerChar2.GetComponent<Material>().color;
-                setWinnerSave(Color.blue, "Player 2 Wins", scoreSave.coinScore2);
+                setWinnerSave(Color.blue, "Player 2 Wins");
             }
             else
             { // both players tied
-                setWinnerSave(Color.magenta, "The game is a Tie", scoreSave.coinScore);
+                setWinnerSave(Color.magenta, "The game is a Tie");
             }
 
             SceneManager.LoadScene("Game Over");
@@ -79,11 +79,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void setWinnerSave(Color plrColor, string plrWinner, int score)
+    private void setWinnerSave(Color plrColor, string plrWinner)
     {
         scoreSave.playerColor = plrColor;
         scoreSave.winner = plrWinner;
-        scoreSave.winnerScore = score;
+
     }
 
     private void FixedUpdate()

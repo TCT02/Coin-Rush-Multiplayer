@@ -41,5 +41,10 @@ public class EndScreen : MonoBehaviour
             }
 
         }
+        if (Input.GetMouseButton(0)) //if tapping
+        {
+            print("Loading Game");
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 }

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+//using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -67,12 +69,17 @@ public class MainMenu : MonoBehaviour
                     Application.Quit();
                 }
             }
-
         }
-        
+
+        if (Input.GetMouseButton(0)) //if tapping
+        {
+            print("Loading Game");
+            SceneManager.LoadScene("Game Map");
+        }
+
 
     }
-  
+
     private void FixedUpdate()
     {
         //initPos + (new Vector3(0, 5, 0))

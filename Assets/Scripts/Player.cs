@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
     {
         while (currHP > 0)
         {
-            currHP -= 10;
+            //currHP -= 10;
             yield return new WaitForSeconds(1f);  // wait 1 second
 
         }
