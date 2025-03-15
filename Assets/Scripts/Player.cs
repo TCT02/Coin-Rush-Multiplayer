@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 //using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     //Player Status
     public float currHP = 100;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 8;
     [SerializeField] float jumpPower = 200;
 
+    //Jump functions
     public void OnJump() //When the jump button is pressed for mobile.
     {
             if (onGround == true && isMobileClient == true)
