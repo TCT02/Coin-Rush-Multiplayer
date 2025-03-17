@@ -67,6 +67,9 @@ namespace HelloWorld
             button.style.width = 240;
             button.style.backgroundColor = Color.white;
             button.style.color = Color.black;
+
+            //reposition buttons
+
             button.style.unityFontStyleAndWeight = FontStyle.Bold;
             return button;
         }
@@ -76,8 +79,11 @@ namespace HelloWorld
             var label = new Label();
             label.name = name;
             label.text = content;
-            label.style.color = Color.black;
+            label.style.color = Color.gray;
             label.style.fontSize = 18;
+            label.style.position = Position.Absolute;
+            label.style.left = 0f;     
+            label.style.bottom = 0f;   
             return label;
         }
 

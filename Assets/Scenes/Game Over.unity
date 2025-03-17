@@ -685,7 +685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap Anywhere to Return to the Menu!
+  m_text: Click to Return to the Menu!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 42df1c7856584b6b8db9a509b6b10074, type: 2}
@@ -694,13 +694,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278218501
-  m_fontColor: {r: 0.01918715, g: 0.43529412, b: 0, a: 1}
+    rgba: 4278252524
+  m_fontColor: {r: 0.92390525, g: 0.9528302, b: 0, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.2924528, g: 0.2020777, b: 0, a: 1}
-    topRight: {r: 0.29411766, g: 0.20392157, b: 0, a: 1}
+    topLeft: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
+    topRight: {r: 1, g: 0.7028302, b: 0.7028302, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
