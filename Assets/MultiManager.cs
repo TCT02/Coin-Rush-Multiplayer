@@ -11,7 +11,7 @@ namespace HelloWorld
         Button hostButton;
         Button clientButton;
         Button serverButton;
-        Button moveButton;
+        //Button moveButton;
         Label statusLabel;
 
         void OnEnable()
@@ -22,20 +22,20 @@ namespace HelloWorld
             hostButton = CreateButton("HostButton", "Host");
             clientButton = CreateButton("ClientButton", "Client");
             serverButton = CreateButton("ServerButton", "Server");
-            moveButton = CreateButton("MoveButton", "Move");
+            //moveButton = CreateButton("MoveButton", "Move");
             statusLabel = CreateLabel("StatusLabel", "Not Connected");
 
             rootVisualElement.Clear();
             rootVisualElement.Add(hostButton);
             rootVisualElement.Add(clientButton);
             rootVisualElement.Add(serverButton);
-            rootVisualElement.Add(moveButton);
+            //rootVisualElement.Add(moveButton);
             rootVisualElement.Add(statusLabel);
 
             hostButton.clicked += OnHostButtonClicked;
             clientButton.clicked += OnClientButtonClicked;
             serverButton.clicked += OnServerButtonClicked;
-            moveButton.clicked += SubmitNewPosition;
+            //moveButton.clicked += SubmitNewPosition;
         }
 
         void Update()
@@ -48,7 +48,7 @@ namespace HelloWorld
             hostButton.clicked -= OnHostButtonClicked;
             clientButton.clicked -= OnClientButtonClicked;
             serverButton.clicked -= OnServerButtonClicked;
-            moveButton.clicked -= SubmitNewPosition;
+            //moveButton.clicked -= SubmitNewPosition;
         }
 
         void OnHostButtonClicked() => NetworkManager.Singleton.StartHost();
@@ -86,7 +86,7 @@ namespace HelloWorld
             if (NetworkManager.Singleton == null)
             {
                 SetStartButtons(false);
-                SetMoveButton(false);
+                //SetMoveButton(false);
                 SetStatusText("NetworkManager not found");
                 return;
             }
@@ -94,13 +94,13 @@ namespace HelloWorld
             if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
             {
                 SetStartButtons(true);
-                SetMoveButton(false);
+                //SetMoveButton(false);
                 SetStatusText("Not connected");
             }
             else
             {
                 SetStartButtons(false);
-                SetMoveButton(true);
+                //SetMoveButton(true);
                 UpdateStatusLabels();
             }
         }
@@ -112,14 +112,14 @@ namespace HelloWorld
             serverButton.style.display = state ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
-        void SetMoveButton(bool state)
-        {
-            moveButton.style.display = state ? DisplayStyle.Flex : DisplayStyle.None;
-            if (state)
-            {
-                moveButton.text = NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change";
-            }
-        }
+        //void SetMoveButton(bool state)
+        //{
+        //    moveButton.style.display = state ? DisplayStyle.Flex : DisplayStyle.None;
+         //   if (state)
+         //   {
+         //       moveButton.text = NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change";
+        //    }
+        //}
 
         void SetStatusText(string text) => statusLabel.text = text;
 
@@ -139,14 +139,14 @@ namespace HelloWorld
                 {
                     var playerObject = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(uid);
                     var player = playerObject.GetComponent<OnlinePlayer>();
-                    player.Move();
+                    //player.Move();
                 }
             }
             else if (NetworkManager.Singleton.IsClient)
             {
                 var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
                 var player = playerObject.GetComponent<OnlinePlayer>();
-                player.Move();
+                //player.Move();
             }
         }
     }

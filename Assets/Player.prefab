@@ -17,9 +17,8 @@ GameObject:
   - component: {fileID: 3676237573295148947}
   - component: {fileID: 1923273739621963896}
   - component: {fileID: 2675535083011905377}
-  - component: {fileID: 1347765155732681657}
-  - component: {fileID: 8753409468628294767}
-  - component: {fileID: -8296219089715162793}
+  - component: {fileID: -3986378345896960908}
+  - component: {fileID: -5744067478548957458}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -73,7 +72,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38c4ec037cf420741a70533ba6a48fab, type: 2}
+  - {fileID: 2100000, guid: c6e3eb20117ff0d429de19d537674444, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,12 +150,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34141c1046158b42ac3c04356db4ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 100
-  maxHP: 100
-  numCoins: 0
-  isDead: 0
-  onGround: 1
-  isMobileClient: 1
+  currHP:
+    m_InternalValue: 100
+  maxHP:
+    m_InternalValue: 100
+  numCoins:
+    m_InternalValue: 0
+  isDead:
+    m_InternalValue: 0
+  onGround:
+    m_InternalValue: 0
+  isMobileClient: 0
   coinPickup: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
   jump: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   moveAction: {fileID: 7050481905068643383, guid: 7d0ff7d4ea930354bbd096e78e3f9c11, type: 3}
@@ -316,7 +320,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1347765155732681657
+--- !u!114 &-3986378345896960908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,19 +329,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 582444025249893176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c57796ebfb91a146b332ef12f63d787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8753409468628294767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582444025249893176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3273fd9faa2154d96139460cd4902c, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
@@ -359,7 +351,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &-8296219089715162793
+--- !u!114 &-5744067478548957458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -10,17 +10,19 @@ public class EndScreen : MonoBehaviour
     [SerializeField] public TextMeshPro scoreText;
     [SerializeField] public TextMeshPro scoreTextP2;
     [SerializeField] public TextMeshPro winnerText;
+    [SerializeField] Color redCol;
+    [SerializeField] Color blueCol;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.color = Color.red;
+        scoreText.color = scoreSave.playerColor;
         scoreText.text = "P1 Collected: " + scoreSave.coinScore;
 
-        scoreTextP2.color = Color.blue;
+        scoreTextP2.color = scoreSave.player2Color;
         scoreTextP2.text = "P2 Collected: " + scoreSave.coinScore2;
 
-        winnerText.color = scoreSave.playerColor;
+        winnerText.color = scoreSave.winnerColor;
         winnerText.text = scoreSave.winner;
 
         
