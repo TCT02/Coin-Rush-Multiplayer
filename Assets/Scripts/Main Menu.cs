@@ -17,6 +17,10 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] TextMeshPro promptText;
 
+    [SerializeField] AudioClip showMenu;
+    [SerializeField] AudioClip playGame;
+
+    AudioSource sound;
     //On Screen exit button
     public void OnExit() //When the exit button is pressed.
     {
@@ -34,6 +38,9 @@ public class MainMenu : MonoBehaviour
 
         initPos = gameObject.transform.position;
         gameObject.transform.position += new Vector3(0,20,0);
+
+        sound = GetComponent<AudioSource>();
+        sound.clip = playGame;
         //StartCoroutine(titleBobbing());
         //Invoke("showPrompt", 5);
     }
@@ -51,6 +58,8 @@ public class MainMenu : MonoBehaviour
                 if (touch.phase == TouchPhase.Ended) //if tapping
                 {
                     print("Loading Game");
+                    sound.clip = playGame;
+                    sound.Play();
                     SceneManager.LoadScene("Game Map");
                 }
                 else if (touch.phase == TouchPhase.Stationary) //if holding
@@ -74,6 +83,8 @@ public class MainMenu : MonoBehaviour
         if (Input.GetMouseButton(0)) //if tapping
         {
             print("Loading Game");
+            sound.clip = playGame;
+            sound.Play();
             SceneManager.LoadScene("Game Map");
         }
 
@@ -101,6 +112,9 @@ public class MainMenu : MonoBehaviour
         promptText.enabled = true;
         promptActive = true;
         canTouch = true;
+
+        sound.clip = showMenu;
+        sound.Play();
     }
     
     /*

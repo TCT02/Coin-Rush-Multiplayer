@@ -163,6 +163,7 @@ MonoBehaviour:
   isMobileClient: 0
   coinPickup: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
   jump: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+  join: {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
   moveAction: {fileID: 7050481905068643383, guid: 7d0ff7d4ea930354bbd096e78e3f9c11, type: 3}
   speed: 8
   jumpPower: 400
@@ -233,8 +234,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
-  m_Resource: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

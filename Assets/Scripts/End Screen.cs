@@ -10,12 +10,18 @@ public class EndScreen : MonoBehaviour
     [SerializeField] public TextMeshPro scoreText;
     [SerializeField] public TextMeshPro scoreTextP2;
     [SerializeField] public TextMeshPro winnerText;
+
     [SerializeField] Color redCol;
     [SerializeField] Color blueCol;
 
+    //Sound Components
+    [SerializeField] AudioClip endScreen;
+    AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {     
+        sound = GetComponent<AudioSource>();
         scoreText.color = scoreSave.playerColor;
         scoreText.text = "P1 Collected: " + scoreSave.coinScore;
 
@@ -25,7 +31,9 @@ public class EndScreen : MonoBehaviour
         winnerText.color = scoreSave.winnerColor;
         winnerText.text = scoreSave.winner;
 
-        
+        sound.clip = endScreen;
+        sound.Play();
+
     }
 
     // Update is called once per frame

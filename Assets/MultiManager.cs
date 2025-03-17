@@ -127,7 +127,7 @@ namespace HelloWorld
         {
             var mode = NetworkManager.Singleton.IsHost ? "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
             string transport = "Transport: " + NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name;
-            string modeText = "Mode: " + mode;
+            string modeText = "Mode: " + mode;          
             SetStatusText($"{transport}\n{modeText}");
         }
 

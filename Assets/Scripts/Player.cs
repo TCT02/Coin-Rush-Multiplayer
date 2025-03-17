@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 //using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -28,6 +29,7 @@ public class Player : NetworkBehaviour
     //Sound
     [SerializeField] AudioClip coinPickup;
     [SerializeField] AudioClip jump;
+    [SerializeField] AudioClip join;
 
     AudioSource sound;
 
@@ -85,7 +87,8 @@ public class Player : NetworkBehaviour
 
         //Sound initialization
         sound = GetComponent<AudioSource>();
-        sound.clip = coinPickup;
+        sound.clip = join;
+        sound.Play();
 
         //Control initialization
         rb = gameObject.GetComponent<Rigidbody>();
@@ -214,7 +217,7 @@ public class Player : NetworkBehaviour
         while (currHP.Value > 0)
         {
             //currHP -= 10;
-            updateHPServerRpc(10);
+            updateHPServerRpc(5);
             yield return new WaitForSeconds(1f);  // wait 1 second
 
         }
